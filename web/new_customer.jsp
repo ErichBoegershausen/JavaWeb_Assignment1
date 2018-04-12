@@ -12,17 +12,7 @@
     </head>
     
     <body>
-        
-        <div id="banner">
-            <h1>Titan Online Banking Application</h1>
-        </div>
-        
-        <div id="nav">
-            <a href="index.html">Home</a>&emsp;|&emsp;
-            <a href="login.html">LogIn</a>&emsp;|&emsp;
-            <a href="index.html">Services</a>&emsp;|&emsp;
-            <a href="index.html">Contact</a>&emsp;
-        </div>
+        <jsp:include page="header.html" />
         
         <div id="content">
             <h3>TOBA Sign Up</h3>
@@ -33,14 +23,14 @@
                 <form method="post" action="new_customer">
             
                     <input type="hidden" name="action" value="add">     
-                    <p><label>First Name:</label><input type="text" name="first" value="${customer.first}">
-                    <p><label>Last Name:</label><input type="text" name="last" value="${customer.last}"> 
-                    <p><label>Phone:</label><input type="text" name="phone" value="${customer.phone}">
-                    <p><label>Address:</label><input type="text" name="address" value="${customer.address}">
-                    <p><label>State:</label><input type="text" name="state" value="${customer.state}">
-                    <p><label>City:</label><input type="text" name="city" value="${customer.city}">
-                    <p><label>Zip Code:</label><input type="text" name="zip" value="${customer.zip}">
-                    <p><label>E-mail:</label><input type="text" name="email" value="${customer.email}">
+                    <p><label>First Name:</label><input type="text" name="first" value="${user.first}">
+                    <p><label>Last Name:</label><input type="text" name="last" value="${user.last}"> 
+                    <p><label>Phone:</label><input type="text" name="phone" value="${user.phone}">
+                    <p><label>Address:</label><input type="text" name="address" value="${user.address}">
+                    <p><label>State:</label><input type="text" name="state" value="${user.state}">
+                    <p><label>City:</label><input type="text" name="city" value="${user.city}">
+                    <p><label>Zip Code:</label><input type="text" name="zip" value="${user.zip}">
+                    <p><label>E-mail:</label><input type="text" name="email" value="${user.email}">
                     <p><input type="submit" value="Submit" class="button">
             
                 </form>
@@ -48,7 +38,9 @@
             </div>    
         </div>
         
-        
+        <div id = "footer">
+            <jsp:include page="footer.jsp" />
+        </div>
     </body>
     
 </html>

@@ -14,7 +14,7 @@ public class LoginServlet extends HttpServlet {
         String url = "/login_failure.html";
         
         if ("jsmith@toba.com".equals(userName) && "letmein".equals(passWord)) {
-            url = "/account_activity.html";
+            url = "/account_activity.jsp";
         } else {
             url = "/login_failure.html";
         }

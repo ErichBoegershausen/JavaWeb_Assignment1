@@ -9,6 +9,15 @@ body {
     font-family: Arial, Georgia, sans-serif;
 }
 
+table {
+    min-width: 300px;
+}
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto 0 auto;
+    padding: 5px;
+}
 #banner {
     min-width: 600px;
     width: 100%;
@@ -17,6 +26,17 @@ body {
     text-align: center;
     background-color: lightskyblue;
     line-height: 3em;
+}
+
+#footer {
+    min-width: 600px;
+    width: 100%;
+    min-height: 35px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: lightskyblue;
+    line-height: 3.5em;
+    font-size: 10px;
 }
 
 #nav {
@@ -34,7 +54,7 @@ body {
 #content {
     min-width: 600px;
     width: 100%;
-    min-height: 400px;
+    min-height: 300px;
     border: 1px solid black;
     text-align: center;
     background-color: aliceblue;

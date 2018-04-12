@@ -12,23 +12,16 @@
     </head>
     
     <body>
-        
-        <div id="banner">
-            <h1>Titan Online Banking Application</h1>
-        </div>
-        
-        <div id="nav">
-            <a href="index.html">Home</a>&emsp;|&emsp;
-            <a href="login.html">LogIn</a>&emsp;|&emsp;
-            <a href="index.html">Services</a>&emsp;|&emsp;
-            <a href="index.html">Contact</a>&emsp;
-        </div>
+        <jsp:include page="header.html" />
         
         <div id="content">
             <h1>404 Error</h1> 
             <p>The server was not able to find the file you requested.</p> <p>To continue, click the Back button.</p>
         </div>
-        
+
+       <div id = "footer">
+            <jsp:include page="footer.jsp" />
+        </div>
         
     </body>
     

@@ -1,11 +1,10 @@
-package toba.customer;
+package toba.user;
 
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import toba.customer.*;
-import toba.data.CustomerDB;
+import toba.data.UserDB;
 
 public class NewCustomerServlet extends HttpServlet {
 
@@ -31,19 +30,25 @@ public class NewCustomerServlet extends HttpServlet {
             String city = request.getParameter("city");
             String zip = request.getParameter("zip");
             String email = request.getParameter("email");
-            
-            Customer customer = new Customer(first, last, phone, address, state, city, zip, email);
-            
+           
+ 
             if (first == null || last == null || phone == null || address == null || state == null || city == null || zip == null || email == null || first.isEmpty() || last.isEmpty() || phone.isEmpty() || address.isEmpty() || state.isEmpty() || city.isEmpty() || zip.isEmpty() || email.isEmpty()) {
                 message = "***Please fill in all text boxes to sign up.***";
                 url = "/new_customer.jsp";
             } else {
+                String username = last + zip;
+                String password = "welcome1";
+                
+                User user = new User(first, last, phone, address, state, city, zip, email, username, password);
+                
                 message = "";
-                url = "/success.html";
-                CustomerDB.insert(customer);
+                url = "/success.jsp";
+                
+                // Add the new create user object to the session scope
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
             }
-            
-            request.setAttribute("customer", customer);
+           
             request.setAttribute("message", message);
             
         }
