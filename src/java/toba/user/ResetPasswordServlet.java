@@ -19,10 +19,6 @@ public class ResetPasswordServlet extends HttpServlet {
         String message;
         
         if (action == null) {
-            action = "join";
-        }
-        
-        if (action.equals("join")) {
             url = "/password_reset.jsp";
         } else if (action.equals("change")) {
             String newpassword = request.getParameter("newpassword");
